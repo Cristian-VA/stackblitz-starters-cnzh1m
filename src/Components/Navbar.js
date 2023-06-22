@@ -8,6 +8,7 @@ background: rgba(255, 247, 237, 1);
 padding: 1.5em 1em;
 display: flex;
 justify-content: space-between;
+height: 13vh
 `
 
 

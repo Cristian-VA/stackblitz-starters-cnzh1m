@@ -12,7 +12,7 @@ import Vans from "./Pages/Vans"
 
 const StyledDiv = styled.div`
 display: flex;
-min-height: 100vh;
+min-height: 75vh;
 flex-direction: column;
 justify-content: space-between;
 `
