@@ -6,7 +6,7 @@ import styled from "styled-components"
 const StyledDiv = styled.div`
 background-image: url("https://stackblitz.com/files/stackblitz-starters-cnzh1m/github/Cristian-VA/stackblitz-starters-cnzh1m/main/src/images/Home.png");
 width:100%;
-height: 75.15vh;
+height: 80vh;
 background-size: cover;
 border: 0px;
 padding: 4em 2em;
