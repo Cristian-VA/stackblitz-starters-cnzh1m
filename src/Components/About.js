@@ -9,7 +9,7 @@ import { Link } from "react-router-dom"
 export default function About() {
   return (
     <div  className="md:flex">
-    <img className=" max-h-80 w-full" src="https://stackblitz.com/storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMnpNQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--499a29b29589f469a527d29cb52c276df00cc67e/image%2054.png" alt=""/>
+    <img className=" max-h-80 w-full" src="https://stackblitz.com/files/stackblitz-starters-cnzh1m/github/Cristian-VA/stackblitz-starters-cnzh1m/main/src/images/about.png" alt=""/>
   <div className="px-8">
     <h1 className="md:pt-0 pt-6 pb-4 font-bold">Don’t squeeze in a sedan when you could relax in a van.</h1>
     <p className="text-xs md:p-0">Our mission is to enliven your road trip with the perfect travel van rental. Our vans are recertified before each trip to ensure your travel plans can go off without a hitch.

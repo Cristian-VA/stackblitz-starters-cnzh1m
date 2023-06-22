@@ -4,13 +4,12 @@ import { Link } from "react-router-dom"
 import styled from "styled-components" 
  
 const StyledDiv = styled.div`
-background-image: url("https://stackblitz.com/storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBd0hNQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--4a48ebb9ea3c924c4e32e0b407e2ba13dd4502d5/image%2053.png");
+background-image: url("https://stackblitz.com/files/stackblitz-starters-cnzh1m/github/Cristian-VA/stackblitz-starters-cnzh1m/main/src/images/Home.png");
 width:100%;
 height: 75.15vh;
 background-size: cover;
 border: 0px;
 padding: 4em 2em;
-
 `
 
 
