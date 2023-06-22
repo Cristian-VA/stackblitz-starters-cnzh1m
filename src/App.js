@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import styled from "styled-components" 
 import Navbar from "./Components/Navbar"
 import Footer from "./Components/Footer"
-import Home from "./Components/Home"
-import About from "./Components/About"
-
+import Home from "./Pages/Home"
+import About from "./Pages/About"
+import Vans from "./Pages/Vans"
 
 
 
@@ -27,7 +27,7 @@ export default function App() {
 
       <Route path="/" element={<Home/>}/>
       <Route path= "/about" element={<About/>}/>
-
+      <Route path= "/vans" element={<Vans/>}/>
     </Routes>
 
     <Footer/>

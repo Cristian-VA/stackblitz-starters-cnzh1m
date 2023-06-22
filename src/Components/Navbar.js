@@ -14,9 +14,10 @@ justify-content: space-between;
 export default function Navbar() {
   return (
       <StyledNav>
-        <h1 className="font-bold text-lg"> #VANLIFE</h1>
+        <Link className="font-bold text-lg" to="/">#VANLIFE</Link>
+       
         <div >
-          <Link className="hover:underline no-underline text-gray-900 text-sm font-semibold pr-4" to="/">Home</Link>
+          <Link className="hover:underline no-underline text-gray-900 text-sm font-semibold pr-4" to="/Vans">Vans</Link>
           <Link className="hover:underline no-underline text-gray-900 font-semibold text-sm"  to="/about">About</Link>
         </div>  
       </StyledNav>
