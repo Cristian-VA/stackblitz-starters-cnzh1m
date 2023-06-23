@@ -12,9 +12,9 @@ export default function LayoutHost (){
     <>
       <StyledDiv>
          <Link  to="/host">Dashboard</Link>
-          <Link to="/vans">Income</Link>
-          <Link to="/about">Vans</Link>
-          <Link to="/about">Reviews</Link>
+          <Link to="/host/income">Income</Link>
+          <Link to="/host/Vans">Vans</Link>
+          <Link to="/host/Reviews">Reviews</Link>
       </StyledDiv>
       <Outlet/>
    </>

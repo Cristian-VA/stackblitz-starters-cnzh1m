@@ -7,7 +7,7 @@ const StyledDiv = styled.div`
 
 `
 
-export default function LayoutHost (){
+export default function Reviews (){
   return (
     <>
       <StyledDiv>

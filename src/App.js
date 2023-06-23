@@ -12,8 +12,9 @@ import Layout from "./Components/Layout"
 
 import LayoutHost from "./Pages/Host/LayoutHost"
 import Dashboard from "./Pages/Host/DashBoard"
-
-
+import Income from "./Pages/Host/Income"
+import Reviews from "./Pages/Host/Reviews"
+import VansHost from "./Pages/Host/VansHost"
 
 import "./server"
 
@@ -40,6 +41,9 @@ export default function App() {
 
                 <Route element={<LayoutHost/>}>
                 <Route path= "/host" element={<Dashboard/>}/>
+                <Route path= "/host/income" element={<Income/>}/>
+                <Route path= "/host/Reviews" element={<Reviews/>}/>
+                <Route path= "/host/Vans" element={<VansHost/>}/>
                 </Route>
         </Route>
 
@@ -49,3 +53,4 @@ export default function App() {
     </StyledDiv>
   );
 }
+
