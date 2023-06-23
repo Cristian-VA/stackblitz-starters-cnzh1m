@@ -2,8 +2,6 @@ import React from "react";
 import "./style.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import styled from "styled-components" 
-import Navbar from "./Components/Navbar"
-import Footer from "./Components/Footer"
 import Home from "./Pages/Home"
 import About from "./Pages/About"
 import Vans from "./Pages/Van/Vans"
@@ -20,7 +18,6 @@ import "./server"
 
 const StyledDiv = styled.div`
 display: flex;
-
 flex-direction: column;
 justify-content: space-between;
 `
@@ -34,16 +31,18 @@ export default function App() {
       
         <Route element={<Layout/>}>
 
-            <Route path="/" element={<Home/>}/>
+            <Route index element={<Home/>}/>
             <Route path= "/about" element={<About/>}/>
             <Route path= "/vans" element={<Vans/>}/>
             <Route path= "/vans/:id" element={<VanDetail/>}/>
 
-                <Route element={<LayoutHost/>}>
-                <Route path= "/host" element={<Dashboard/>}/>
-                <Route path= "/host/income" element={<Income/>}/>
-                <Route path= "/host/Reviews" element={<Reviews/>}/>
-                <Route path= "/host/Vans" element={<VansHost/>}/>
+
+          // nested routes con relative routes los que empiezan con / son absolute paths 
+                <Route path="host" element={<LayoutHost/>}>
+                <Route path= "dashboard" element={<Dashboard/>}/>
+                <Route path= "income" element={<Income/>}/>
+                <Route path= "Reviews" element={<Reviews/>}/>
+                <Route path= "Vans" element={<VansHost/>}/>
                 </Route>
         </Route>
 

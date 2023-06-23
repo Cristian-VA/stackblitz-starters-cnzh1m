@@ -22,7 +22,7 @@ justify-content: space-between;
 export default function Dashboard (){
   return (
     <>
-      <div>
+      <div className="h-screen">
       <StyledDiv>
         <h1 className="text-3xl font-bold pb-3"> Welcome!</h1>
 
