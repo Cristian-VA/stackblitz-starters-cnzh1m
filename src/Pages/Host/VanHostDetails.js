@@ -52,6 +52,7 @@ export default function VanHostDetails (){
 
   return (
     <>
+     <Link className="text-sm p-4 underline" to="/host/Vans">Back to all vans</Link>
       <StyledDiv>
         this is vdetails
       </StyledDiv>
