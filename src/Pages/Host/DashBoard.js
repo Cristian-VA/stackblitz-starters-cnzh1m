@@ -33,13 +33,17 @@ export default function Dashboard (){
         <h1 className="text-4xl font-bold pb-3 pt-2">$2,260</h1>                         
       </StyledDiv>
 
-     <StyledDiv2>
-       <div className="flex gap-3">
-        <h1 className="text-xl font-bold"> Review score</h1>
-        <p className="my-auto">5.0/0</p>
-      </div>
-        <h1>Details</h1>
-    </StyledDiv2>
+      <StyledDiv2>
+        <div className="flex gap-3">
+          <h1 className="text-xl font-bold"> Review score</h1>
+          <p className="my-auto">5.0/0</p>
+        </div>
+          <h1>Details</h1>
+      </StyledDiv2>
+
+        <div className="py-6">
+          <h1> Your listed Vans</h1>
+        </div>
 
       </div>
 
