@@ -6,10 +6,12 @@ import styled from "styled-components"
  import Navbar from "./Navbar"
 
 
-export default function Navbar() {
+export default function Layout() {
   return (
     <>
-    
+      <Navbar/>
+      <Outlet/>
+      <Footer/>
     </>
     
   )

@@ -8,6 +8,7 @@ import Home from "./Pages/Home"
 import About from "./Pages/About"
 import Vans from "./Pages/Vans"
 import VanDetail from "./Pages/VanDetail"
+import Layout from "./Components/Layout"
 
 import "./server"
 
@@ -23,15 +24,16 @@ export default function App() {
     <StyledDiv>
     <BrowserRouter>
     
-     <Navbar/>
     <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path= "/about" element={<About/>}/>
-      <Route path= "/vans" element={<Vans/>}/>
-      <Route path= "/vans/:id" element={<VanDetail/>}/>
-    </Routes>
+      
+        <Route element={<Layout/>}>
+            <Route path="/" element={<Home/>}/>
+            <Route path= "/about" element={<About/>}/>
+            <Route path= "/vans" element={<Vans/>}/>
+            <Route path= "/vans/:id" element={<VanDetail/>}/>
+        </Route>
 
-    <Footer/>
+    </Routes>
 
     </BrowserRouter>
     </StyledDiv>
