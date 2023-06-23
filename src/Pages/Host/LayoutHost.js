@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link, Outlet } from "react-router-dom"
+import { Link, Outlet, NavLink } from "react-router-dom"
 import styled from "styled-components" 
 
 const StyledDiv = styled.div`
@@ -15,13 +15,17 @@ gap: 1em;
 `
 
 export default function LayoutHost (){
+
+const notActive ="hover:underline hover:text-gray-900"
+const active = "underline text-gray-900"
+
   return (
     <>
       <StyledDiv>
-         <Link className="hover:underline hover:text-gray-900"  to="/host/dashboard">Dashboard</Link>
-          <Link className="hover:underline hover:text-gray-900" to="/host/income">Income</Link>
-          <Link className="hover:underline hover:text-gray-900" to="/host/Vans">Vans</Link>
-          <Link className="hover:underline hover:text-gray-900" to="/host/Reviews">Reviews</Link>
+         <NavLink className={({isActive})=> isActive? active: notActive }  to="/host/dashboard">Dashboard</NavLink>
+          <NavLink className={({isActive})=> isActive? active: notActive} to="/host/income">Income</NavLink>
+          <NavLink className={({isActive})=> isActive? active: notActive} to="/host/Vans">Vans</NavLink>
+          <NavLink className={({isActive})=> isActive? active: notActive} to="/host/Reviews">Reviews</NavLink>
       </StyledDiv>
       <Outlet/>
      

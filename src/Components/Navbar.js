@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import styled from "styled-components" 
  
 const StyledNav = styled.nav`
@@ -12,15 +12,24 @@ height: 13vh
 `
 
 
+const active ="underline text-gray-900 text-sm  font-bold pr-4"
+const notActive ="hover:underline no-underline text-gray-900 text-sm  font-semibold pr-4"
+
 export default function Navbar() {
   return (
       <StyledNav>
         <Link className="font-bold text-lg" to="/">#VANLIFE</Link>
        
         <div >
-           <Link className="hover:underline no-underline text-gray-900 text-sm font-semibold pr-4" to="/host">Host</Link>
-          <Link className="hover:underline no-underline text-gray-900 text-sm font-semibold pr-4" to="/vans">Vans</Link>
-          <Link className="hover:underline no-underline text-gray-900 font-semibold text-sm"  to="/about">About</Link>
+           <NavLink 
+           className= {({isActive}) => isActive ? active : notActive }
+           to="/host">Host</NavLink>
+         
+          <NavLink  className= {({isActive}) => isActive ? active : notActive } 
+          to="/vans">Vans</NavLink>
+        
+          <NavLink  className= {({isActive}) => isActive ? active : notActive }  
+          to="/about">About</NavLink>
         </div>  
       </StyledNav>
     
