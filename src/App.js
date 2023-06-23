@@ -41,7 +41,7 @@ export default function App() {
 
           // nested routes con relative routes los que empiezan con / son absolute paths 
                 <Route path="host" element={<LayoutHost/>}>
-                    <Route path= "dashboard" element={<Dashboard/>}/>
+                    <Route index element={<Dashboard/>}/>
                     <Route path= "income" element={<Income/>}/>
                       <Route path= "Reviews" element={<Reviews/>}/>
                       <Route path= "Vans" element={<VansHost/>}/>
