@@ -21,7 +21,14 @@ const vansArray= [
 {
   id: ":6", name: "Green Wonder", price: 70, description: "With this van, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.", imageUrl: "https://assets.scrimba.com/advanced-react/react-router/green-wonder.png", type: "rugged"}]
  
-
+  const  StyledH1 = styled.h1`
+  padding: 0.5em;
+  margin: 30px 0 15px;
+  width: 100px;
+  text-align: center;
+  border-radius: 8px;
+  color: rgba(255, 247, 237, 1);
+  `
 
 
 export default function VanDetail() {
@@ -55,14 +62,7 @@ export default function VanDetail() {
 
 console.log(van)
 
-let  StyledH1 = styled.h1`
-padding: 0.5em;
-margin: 30px 0 15px;
-width: 100px;
-text-align: center;
-border-radius: 8px;
-color: rgba(255, 247, 237, 1);
-`
+
 
   return (
     <div className="flex flex-col" >
