@@ -10,6 +10,7 @@ padding: 1.5em 1em;
 padding-right: 8em;
 color: rgba(77, 77, 77, 1);
 font-weight: 500;
+gap: 1em;
 
 `
 
