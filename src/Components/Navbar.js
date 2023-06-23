@@ -18,7 +18,8 @@ export default function Navbar() {
         <Link className="font-bold text-lg" to="/">#VANLIFE</Link>
        
         <div >
-          <Link className="hover:underline no-underline text-gray-900 text-sm font-semibold pr-4" to="/Vans">Vans</Link>
+           <Link className="hover:underline no-underline text-gray-900 text-sm font-semibold pr-4" to="/host">Host</Link>
+          <Link className="hover:underline no-underline text-gray-900 text-sm font-semibold pr-4" to="/vans">Vans</Link>
           <Link className="hover:underline no-underline text-gray-900 font-semibold text-sm"  to="/about">About</Link>
         </div>  
       </StyledNav>

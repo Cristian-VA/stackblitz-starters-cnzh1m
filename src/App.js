@@ -6,9 +6,14 @@ import Navbar from "./Components/Navbar"
 import Footer from "./Components/Footer"
 import Home from "./Pages/Home"
 import About from "./Pages/About"
-import Vans from "./Pages/Vans"
-import VanDetail from "./Pages/VanDetail"
+import Vans from "./Pages/Van/Vans"
+import VanDetail from "./Pages/Van/VanDetail"
 import Layout from "./Components/Layout"
+
+import LayoutHost from "./Pages/Host/LayoutHost"
+import Dashboard from "./Pages/Host/DashBoard"
+
+
 
 import "./server"
 
@@ -27,10 +32,15 @@ export default function App() {
     <Routes>
       
         <Route element={<Layout/>}>
+
             <Route path="/" element={<Home/>}/>
             <Route path= "/about" element={<About/>}/>
             <Route path= "/vans" element={<Vans/>}/>
             <Route path= "/vans/:id" element={<VanDetail/>}/>
+
+                <Route element={<LayoutHost/>}>
+                <Route path= "/host" element={<Dashboard/>}/>
+                </Route>
         </Route>
 
     </Routes>
