@@ -7,11 +7,13 @@ const StyledDiv = styled.div`
 
 `
 
+
+
 export default function LayoutVanHost (){
   return (
     <>
       <StyledDiv>
-        this is income
+        this is layout
       </StyledDiv>
 
    </>

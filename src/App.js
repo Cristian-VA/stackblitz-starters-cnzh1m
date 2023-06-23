@@ -44,7 +44,7 @@ export default function App() {
                     <Route index element={<Dashboard/>}/>
                     <Route path= "income" element={<Income/>}/>
                       <Route path= "Reviews" element={<Reviews/>}/>
-                      <Route path= "Vans" element={<VansHost/>}/>
+                      <Route path= "Vans" element={<VansHost/>}/>  
                       <Route path= "Vans/:id" element={<VanHostDetails/>}/>
                       
                 </Route>

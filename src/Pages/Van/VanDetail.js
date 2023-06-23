@@ -78,7 +78,11 @@ console.log(van)
            van.type==="luxury"?
            {background: "rgba(22, 22, 22, 1)"}:
            {background: "rgba(225, 118, 84, 1)"}
-         }>{van.type}</StyledH1>
+         }
+         >{van.type}
+         
+         </StyledH1>
+
         <h1 >{van.name}</h1>
         <p className="font-bold">{`${van.price}/day`}</p>
         <p>{van.description}</p>
