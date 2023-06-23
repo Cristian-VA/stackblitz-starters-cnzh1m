@@ -17,7 +17,7 @@ height: 12vh;
 `
 
 
-export default function Navbar() {
+export default function Footer() {
   return (
     <StyledFooter>
     Ⓒ 2022 #VANLIFE
