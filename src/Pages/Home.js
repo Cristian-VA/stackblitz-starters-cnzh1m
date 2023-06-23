@@ -2,7 +2,8 @@ import React from "react";
 
 import { Link } from "react-router-dom"
 import styled from "styled-components" 
- 
+
+
 const StyledDiv = styled.div`
 background-image: url("https://stackblitz.com/files/stackblitz-starters-cnzh1m/github/Cristian-VA/stackblitz-starters-cnzh1m/main/src/images/Home.png");
 width:100%;
