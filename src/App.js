@@ -43,7 +43,7 @@ export default function App() {
                 <Route path="host" element={<LayoutHost/>}>
                     <Route path= "dashboard" element={<Dashboard/>}/>
                     <Route path= "income" element={<Income/>}/>
-                    <Route path= "Reviews" element={<Reviews/>}/>
+                      <Route path= "Reviews" element={<Reviews/>}/>
                       <Route path= "Vans" element={<VansHost/>}/>
                       <Route path= "Vans/:id" element={<VanHostDetails/>}/>
                       
