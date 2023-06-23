@@ -3,9 +3,7 @@ import React from "react";
 import { Link, } from "react-router-dom"
 import styled from "styled-components" 
 
-const Body = styled.div`
- 
-`
+
 const StyledDiv = styled.div`
 padding: 1em;
 background: rgba(255, 234, 208, 1);

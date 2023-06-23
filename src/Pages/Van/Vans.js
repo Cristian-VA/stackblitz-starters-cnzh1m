@@ -34,6 +34,7 @@ export default function Vans() {
 }, [])
   
 
+
   const vanElements = vans.map((van,index) =>{
     return (
       <div key={index} className="flex flex-col ">

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link, Outlet, NavLink } from "react-router-dom"
+import {  Outlet, NavLink } from "react-router-dom"
 import styled from "styled-components" 
 
 const StyledDiv = styled.div`
@@ -22,7 +22,7 @@ const active = "underline text-gray-900"
   return (
     <>
       <StyledDiv>
-         <NavLink className={({isActive})=> isActive? active: notActive }  to="/host/dashboard">Dashboard</NavLink>
+         <NavLink end className={({isActive})=> isActive? active: notActive }  to="/host/dashboard">Dashboard</NavLink>
           <NavLink className={({isActive})=> isActive? active: notActive} to="/host/income">Income</NavLink>
           <NavLink className={({isActive})=> isActive? active: notActive} to="/host/Vans">Vans</NavLink>
           <NavLink className={({isActive})=> isActive? active: notActive} to="/host/Reviews">Reviews</NavLink>
