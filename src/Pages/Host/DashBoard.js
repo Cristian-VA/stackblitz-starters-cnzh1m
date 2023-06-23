@@ -29,7 +29,8 @@ export default function Dashboard (){
               <div className="flex justify-between">
                 <p>Income Last 30 days</p>
                 <p>Details</p>
-              </div>                         
+              </div>
+        <h1 className="text-4xl font-bold pb-3 pt-2">$2,260</h1>                         
       </StyledDiv>
 
      <StyledDiv2>
