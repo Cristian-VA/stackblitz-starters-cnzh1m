@@ -54,7 +54,7 @@ export default function App() {
                         <Route path= "Vans/:id" element={<VanHostLayout/>}>
                             <Route path= "Pricing" element={<VanHostPricing/>}/>
                             <Route path= "Photos" element={<VanHostPhotos/>}/>
-                            <Route path= "Details" element={<VanHostDetails/>}/>
+                            <Route index element={<VanHostDetails/>}/>
                         </Route>
                       
                 </Route>

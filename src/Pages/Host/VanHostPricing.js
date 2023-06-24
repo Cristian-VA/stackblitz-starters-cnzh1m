@@ -1,20 +1,32 @@
 import React from "react";
 
-import { Link, } from "react-router-dom"
+import { Link, useParams, useOutletContext } from "react-router-dom"
 import styled from "styled-components" 
 
 const StyledDiv = styled.div`
-margin:0 1em;
-padding: 0em 1em;
-background: white;
-
+ margin:0 1em 4em;
+ padding: 0em 1em 1em;
+ background: white;
+ height: 30vh;
 `
 
-export default function VanHostPricing (){
+export default function VanHostPhotos (){
+
+  const { van } = useOutletContext()
+
   return (
     <>
       <StyledDiv>
-        this is Pricing
+
+        {van? (
+        <div >
+          <h1 className="my-4 text-xl font-semibold">${van.price}/day</h1>
+        </div>
+        ) : <h1>Loading...</h1>}
+     
+
+
+
       </StyledDiv>
 
    </>
