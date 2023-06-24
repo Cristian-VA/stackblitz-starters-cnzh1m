@@ -102,7 +102,7 @@ const notActive = "hover:underline"
           </div>
             
           <div className="py-4 flex gap-4">
-            <NavLink className={({isActive}) => isActive? active:notActive } to="Details"> Details </NavLink>
+            <NavLink className={({isActive}) => isActive? active:notActive } to="."> Details </NavLink>
             <NavLink className={({isActive}) => isActive? active:notActive } to="Pricing"> Pricing </NavLink>
             <NavLink className={({isActive}) => isActive? active:notActive } to="Photos"> Photos </NavLink>
           </div>
@@ -119,3 +119,5 @@ const notActive = "hover:underline"
 }
 
 // . es current route .. es bajar al parent route 
+
+//el index siempre poner . como path
