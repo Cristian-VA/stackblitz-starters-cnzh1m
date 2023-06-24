@@ -22,10 +22,17 @@ const active = "underline text-gray-900"
   return (
     <>
       <StyledDiv>
-         <NavLink end className={({isActive})=> isActive? active: notActive }  to="/host/">Dashboard</NavLink>
-          <NavLink className={({isActive})=> isActive? active: notActive} to="/host/income">Income</NavLink>
-          <NavLink className={({isActive})=> isActive? active: notActive} to="/host/Vans">Vans</NavLink>
-          <NavLink className={({isActive})=> isActive? active: notActive} to="/host/Reviews">Reviews</NavLink>
+         <NavLink 
+         end 
+         className=
+         {({isActive})=> isActive? active: notActive } 
+          to=".">
+            Dashboard
+            </NavLink>
+
+          <NavLink className={({isActive})=> isActive? active: notActive} to="income">Income</NavLink>
+          <NavLink className={({isActive})=> isActive? active: notActive} to="Vans">Vans</NavLink>
+          <NavLink className={({isActive})=> isActive? active: notActive} to="Reviews">Reviews</NavLink>
       </StyledDiv>
       <Outlet/>
      
@@ -33,3 +40,6 @@ const active = "underline text-gray-900"
   )
 
 }
+
+//como los elementos en este nav estn nesteados solo se pone  el link final debido a la estructura en App
+//relative links (no es necesario poner todo el path debido a que estan nesteados) en el index se puede poner solo un punto en el dashbord y . te pone en el route en el que e

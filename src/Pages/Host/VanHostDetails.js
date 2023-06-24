@@ -67,7 +67,15 @@ export default function VanHostDetails (){
 
   return (
     <>
-     <Link className="text-sm p-4 underline" to="/host/Vans">Back to all vans</Link>
+        <Link className="text-sm p-4 underline" 
+        to=".."
+        relative="path" //le da a enternder a react router que baje un nivel y que no se valla al parent element
+        >
+        Back to all vans
+        </Link>
+
+
+
       <StyledDiv>
         {van? (
         <div>
@@ -105,20 +113,4 @@ export default function VanHostDetails (){
 
 }
 
-//{van? (
-//  <div className="p-4">
-//    <img src={van.imageUrl} alt=""/>
-// 
-//    <StyledH1 style=
-//     {
-//       van.type==="rugged"?
-//       { background: "rgba(17, 94, 89, 1)"}: 
-//       van.type==="luxury"?
-//       {background: "rgba(22, 22, 22, 1)"}:
-//       {background: "rgba(225, 118, 84, 1)"}
-//     }>{van.type}</StyledH1>
-//    <h1 >{van.name}</h1>
-//    <p className="font-bold">{`${van.price}/day`}</p>
-//    <p>{van.description}</p>
-//  </div> 
-//  ) : <h2> Loading..</h2>}
+// . es current route .. es bajar al parent route 
