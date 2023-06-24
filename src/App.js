@@ -14,7 +14,13 @@ import Income from "./Pages/Host/Income"
 import Reviews from "./Pages/Host/Reviews"
 
 import VansHost from "./Pages/Host/VansHost"
+
+
+import VanHostLayout from "./Pages/Host/VanHostLayout"
+import VanHostPricing from "./Pages/Host/VanHostPricing"
 import VanHostDetails from "./Pages/Host/VanHostDetails"
+import VanHostPhotos  from "./Pages/Host/VanHostPhotos"
+
 
 import "./server"
 
@@ -45,7 +51,12 @@ export default function App() {
                     <Route path= "income" element={<Income/>}/>
                       <Route path= "Reviews" element={<Reviews/>}/>
                       <Route path= "Vans" element={<VansHost/>}/>  
-                      <Route path= "Vans/:id" element={<VanHostDetails/>}/>
+
+                        <Route path= "Vans/:id" element={<VanHostLayout/>}>
+                            <Route path= "Pricing" element={<VanHostPricing/>}/>
+                            <Route path= "Photos" element={<VanHostPhotos/>}/>
+                            <Route path= "Details" element={<VanHostDetails/>}/>
+                        </Route>
                       
                 </Route>
         </Route>

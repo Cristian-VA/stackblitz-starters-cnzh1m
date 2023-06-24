@@ -7,11 +7,11 @@ const StyledDiv = styled.div`
 
 `
 
-export default function VanHostDetails (){
+export default function VanHostPricing (){
   return (
     <>
       <StyledDiv>
-        this is details
+        this is Pricing
       </StyledDiv>
 
    </>
