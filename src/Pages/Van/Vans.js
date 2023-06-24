@@ -27,8 +27,15 @@ export default function Vans() {
   const [vans, setVans] = React.useState([])
   const [searchParams, setSearchParams] = useSearchParams()
 
+
   console.log(searchParams.get("type"))
+
  const typeFilter = searchParams.get("type")
+ 
+ const displayedVans= typeFilter ?
+ vans.filter(item => item.type.toLowerCase() ===typeFilter)
+ : vans
+
   React.useEffect(() => {
      fetch("/api/vans")
          .then(res => res.json())
@@ -37,7 +44,7 @@ export default function Vans() {
   
 
 
-  const vanElements = vans.map((van,index) =>{
+  const vanElements = displayedVans.map((van,index) =>{
     return (
       <div key={index} className="flex flex-col ">
         <Link  to={`/vans/:${van.id}`}>
@@ -66,8 +73,15 @@ export default function Vans() {
  })
 
   return (
-    <div>
+    <div className="min-h-screen">
       <h1 className="text-center font-bold"> Explore our Van options</h1>
+
+      <div className="p-4 flex gap-4">
+        <Link className="bg-orange-100 py-1 px-4 rounded text-gray-600 font-semibold" to="?type=simple">Simple</Link>
+        <Link className="bg-orange-100 py-1 px-4 rounded text-gray-600 font-semibold" to="?type=rugged">Rugged</Link>
+        <Link className="bg-orange-100 py-1 px-4 rounded text-gray-600 font-semibold" to="?type=luxury">Luxury</Link>
+      </div> 
+
     <StyledDiv >
       {vanElements}
   </StyledDiv>
