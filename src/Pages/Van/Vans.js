@@ -76,10 +76,22 @@ export default function Vans() {
     <div className="min-h-screen">
       <h1 className="text-center font-bold"> Explore our Van options</h1>
 
-      <div className="p-4 flex gap-4">
-        <Link className="bg-orange-100 py-1 px-4 rounded text-gray-600 font-semibold" to="?type=simple">Simple</Link>
-        <Link className="bg-orange-100 py-1 px-4 rounded text-gray-600 font-semibold" to="?type=rugged">Rugged</Link>
-        <Link className="bg-orange-100 py-1 px-4 rounded text-gray-600 font-semibold" to="?type=luxury">Luxury</Link>
+      <div className="p-4 flex gap-4 ">
+        <button className="bg-orange-100 py-1 px-4 rounded text-gray-600 font-semibold" 
+        onClick ={()=> setSearchParams({type:"simple"})}
+        >Simple</button>
+        <button className="bg-orange-100 py-1 px-4 rounded text-gray-600 font-semibold" 
+        onClick ={()=> setSearchParams({type:"rugged"})}
+        >Rugged</button>
+        <button className="bg-orange-100 py-1 px-4 rounded text-gray-600 font-semibold" 
+        onClick ={()=> setSearchParams({type:"luxury"})}
+        >Luxury</button>
+
+        <button className=" py-1 px-4 rounded text-gray-900 " 
+        onClick ={()=> setSearchParams({})}
+        >Clear </button>
+       
+
       </div> 
 
     <StyledDiv >
