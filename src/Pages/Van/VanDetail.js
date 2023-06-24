@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
-import { useParams } from "react-router-dom"
+import { useParams, useLocation } from "react-router-dom"
 import styled from "styled-components" 
 
 const vansArray= [
@@ -36,7 +36,12 @@ export default function VanDetail() {
   const [van, setVan] = React.useState(null)
 
 
+  const location = useLocation()
+  console.log(location)
 
+  const pathUrl = location.state.search ? path : "."
+  const path = `${location.pathname}?${location.state.search}`
+  console.log(path)
   React.useEffect(() => {
     if (params.id === ":1"){
       setVan(vansArray[0])
@@ -66,7 +71,7 @@ console.log(van)
 
   return (
     <div className="flex flex-col" >
-        <Link className="text-sm p-4 underline" to="/Vans">Back to all vans</Link>
+        <Link className="text-sm p-4 underline" to={pathUrl}>Back to all vans</Link>
       {van? (
       <div className="p-4">
         <img src={van.imageUrl} alt=""/>

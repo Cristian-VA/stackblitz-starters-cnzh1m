@@ -31,7 +31,7 @@ export default function Vans() {
   console.log(searchParams.get("type"))
 
  const typeFilter = searchParams.get("type")
- 
+
  const displayedVans= typeFilter ?
  vans.filter(item => item.type.toLowerCase() ===typeFilter)
  : vans
@@ -47,7 +47,7 @@ export default function Vans() {
   const vanElements = displayedVans.map((van,index) =>{
     return (
       <div key={index} className="flex flex-col ">
-        <Link  to={`/vans/:${van.id}`}>
+        <Link  to={`:${van.id}`} state={{ search: searchParams.toString() }}>
        <img className="rounded" src={van.imageUrl} alt=""/>
          <div className="flex justify-between mt-1">
            <h1 className="text-xs font-bold">{van.name}</h1>
@@ -79,18 +79,19 @@ export default function Vans() {
       <div className="p-4 flex gap-4 ">
         <button className="bg-orange-100 py-1 px-4 rounded text-gray-600 font-semibold" 
         onClick ={()=> setSearchParams({type:"simple"})}
-        >Simple</button>
+        >{typeFilter === "simple"? "Selected" : "Simple"}</button>
         <button className="bg-orange-100 py-1 px-4 rounded text-gray-600 font-semibold" 
         onClick ={()=> setSearchParams({type:"rugged"})}
-        >Rugged</button>
+        >{typeFilter === "rugged"? "Selected" : "Rugged"}</button>
         <button className="bg-orange-100 py-1 px-4 rounded text-gray-600 font-semibold" 
         onClick ={()=> setSearchParams({type:"luxury"})}
-        >Luxury</button>
+        >{typeFilter === "luxury"? "Selected" : "Luxury"}</button>
 
-        <button className=" py-1 px-4 rounded text-gray-900 " 
-        onClick ={()=> setSearchParams({})}
-        >Clear </button>
-       
+        {typeFilter && 
+            <button className=" py-1 px-4 rounded text-gray-900 " 
+            onClick ={()=> setSearchParams({})}
+            >Clear </button>
+          }
 
       </div> 
 

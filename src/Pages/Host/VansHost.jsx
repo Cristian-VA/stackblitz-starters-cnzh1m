@@ -23,7 +23,7 @@ export default function VansHost (){
 
   const vansElements = vans.map((van, index)=>{
     return (
-      <Link to={`/host/Vans/:${van.id}`}>
+      <Link to={`:${van.id}`}>
       <div class="flex bg-white p-4 my-5 gap-4">
         <img className="rounded w-28" src={van.imageUrl} alt=""/>
 
