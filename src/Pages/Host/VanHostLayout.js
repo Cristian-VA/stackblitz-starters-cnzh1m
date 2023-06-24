@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link, useParams, NavLink, Outlet } from "react-router-dom"
+import { Link, useParams, NavLink, Outlet  } from "react-router-dom"
 import styled from "styled-components" 
 
 const vansArray= [
@@ -23,20 +23,21 @@ const vansArray= [
  
 
 const StyledDiv = styled.div`
- padding:1em;
+ padding:1em 1em 0;
  background: white;
  margin: 0 1em;
 
 `
 
 const  StyledH1 = styled.h1`
-  padding: 0.5em;
+  padding: 0.5em ;
   margin: 15px 0 10px;
   width: 80px;
   text-align: center;
   border-radius: 8px;
   color: rgba(255, 247, 237, 1);
   font-size:12px;
+  
   `
 
 
@@ -65,6 +66,9 @@ export default function VanHostDetails (){
   console.log(van)
 
 
+const active = "font-semibold underline"
+const notActive = "hover:underline"
+
   return (
     <>
         <Link className="text-sm p-4 underline" 
@@ -74,7 +78,7 @@ export default function VanHostDetails (){
         Back to all vans
         </Link>
 
-
+    
 
       <StyledDiv>
         {van? (
@@ -98,9 +102,9 @@ export default function VanHostDetails (){
           </div>
             
           <div className="py-4 flex gap-4">
-            <NavLink to="Details"> Details </NavLink>
-            <NavLink to="Pricing"> Pricing </NavLink>
-            <NavLink to="Photos"> Photos </NavLink>
+            <NavLink className={({isActive}) => isActive? active:notActive } to="Details"> Details </NavLink>
+            <NavLink className={({isActive}) => isActive? active:notActive } to="Pricing"> Pricing </NavLink>
+            <NavLink className={({isActive}) => isActive? active:notActive } to="Photos"> Photos </NavLink>
           </div>
 
 
@@ -108,7 +112,7 @@ export default function VanHostDetails (){
         ) : <h1>Loading...</h1>}
       </StyledDiv>
       
-      <Outlet/>
+      <Outlet context={{van}}/>
    </>
   )
 

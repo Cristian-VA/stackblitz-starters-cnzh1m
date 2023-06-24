@@ -25,9 +25,8 @@ import VanHostPhotos  from "./Pages/Host/VanHostPhotos"
 import "./server"
 
 const StyledDiv = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: space-between;
+display:flex; 
+flex-direction:column;
 `
 
 export default function App() {

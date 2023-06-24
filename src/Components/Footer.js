@@ -11,7 +11,7 @@ text-align: center;
 padding: 1.5em;
 color:rgba(170, 170, 170, 1);
 font-size: 13px;
-height: 12vh;
+
 
 
 `

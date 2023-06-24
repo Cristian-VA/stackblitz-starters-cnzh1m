@@ -4,4 +4,7 @@ body{
   margin: 0;
   font-family: 'Inter', sans-serif;
   background: rgba(255, 247, 237, 1);
+  min-height: 100vh;
+  
+
 }
