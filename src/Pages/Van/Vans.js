@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components" 
-import { Link } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 
 
 
@@ -25,8 +25,10 @@ const StyledButton= styled.button`
 export default function Vans() {
 
   const [vans, setVans] = React.useState([])
- 
- 
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  console.log(searchParams.get("type"))
+ const typeFilter = searchParams.get("type")
   React.useEffect(() => {
      fetch("/api/vans")
          .then(res => res.json())
