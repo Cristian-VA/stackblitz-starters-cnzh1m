@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter, Routes, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom"
 import styled from "styled-components" 
 import Home from "./Pages/Home"
 import About from "./Pages/About"
@@ -29,14 +29,9 @@ display:flex;
 flex-direction:column;
 `
 
-export default function App() {
-  return (
-    <StyledDiv>
-    <BrowserRouter>
-    
-    <Routes>
-      
-        <Route element={<Layout/>}>
+
+const router = createBrowserRouter(createRoutesFromElements(
+  <Route element={<Layout/>}>
 
             <Route index element={<Home/>}/>
            
@@ -61,10 +56,15 @@ export default function App() {
                 </Route>
                 <Route path="*" element={<NotFound/>}/>
         </Route>
+    
 
-    </Routes>
+))
 
-    </BrowserRouter>
+
+export default function App() {
+  return (
+    <StyledDiv>
+    <RouterProvider router={router}/>
     </StyledDiv>
   );
 }

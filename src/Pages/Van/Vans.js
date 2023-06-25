@@ -22,11 +22,18 @@ const StyledButton= styled.button`
  border-radius: 5px;
 `
 
+async function getVans() {
+  const res = await fetch("/api/vans")
+  const data = await res.json()
+  return data.vans
+}
+
+
 export default function Vans() {
 
   const [vans, setVans] = React.useState([])
   const [searchParams, setSearchParams] = useSearchParams()
-
+const [loading, setLoading] = React.useState(false)
 
 
  const typeFilter = searchParams.get("type")
@@ -35,10 +42,17 @@ export default function Vans() {
  vans.filter(item => item.type.toLowerCase() ===typeFilter)
  : vans
 
-  React.useEffect(() => {
-     fetch("/api/vans")
-         .then(res => res.json())
-         .then(data => setVans(data.vans))
+
+ //conditional rendeing con state
+ React.useEffect(() => {
+  async function loadVans() {
+      setLoading(true)
+      const data = await getVans()
+      setVans(data)
+      setLoading(false)
+  }
+  
+  loadVans()
 }, [])
   
 
@@ -71,6 +85,11 @@ export default function Vans() {
     )
  })
 
+//conditional rendeing con state
+
+ if (loading) {
+  return <h1 className="h-screen">Loading...</h1>
+}
   return (
     <div className="min-h-screen">
       <h1 className="text-center font-bold"> Explore our Van options</h1>
