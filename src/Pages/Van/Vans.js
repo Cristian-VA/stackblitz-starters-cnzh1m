@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components" 
-import { Link, useSearchParams } from "react-router-dom"
+import { Link, useSearchParams, useLoaderData } from "react-router-dom"
 
+
+export function loader(){
+  return getVans()
+}
 
 
 
@@ -33,7 +37,10 @@ export default function Vans() {
 
   const [vans, setVans] = React.useState([])
   const [searchParams, setSearchParams] = useSearchParams()
-const [loading, setLoading] = React.useState(false)
+  const [loading, setLoading] = React.useState(false)
+  
+  const data = useLoaderData()
+  console.log(data)
 
 
  const typeFilter = searchParams.get("type")

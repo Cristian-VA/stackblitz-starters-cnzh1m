@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, RouterProvider, createBrowserRouter, crea
 import styled from "styled-components" 
 import Home from "./Pages/Home"
 import About from "./Pages/About"
-import Vans from "./Pages/Van/Vans"
+import Vans, {loader as vansLoader} from "./Pages/Van/Vans"
 import VanDetail from "./Pages/Van/VanDetail"
 import Layout from "./Components/Layout"
 
@@ -36,7 +36,7 @@ const router = createBrowserRouter(createRoutesFromElements(
             <Route index element={<Home/>}/>
            
             <Route path= "/about" element={<About/>}/>
-            <Route path= "/vans" element={<Vans/>}/>
+            <Route path= "/vans" element={<Vans/>} loader={vansLoader}/>
             <Route path= "/vans/:id" element={<VanDetail/>}/>
 
 
