@@ -5,12 +5,26 @@ import styled from "styled-components"
 
 
 const StyledDiv = styled.div`
-height: 79vh;
+height: 77.8vh;
 padding: 1em;
 `
 
 
-export default function Home (){
+export default function Login() {
+  const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
+
+  function handleSubmit(e) {
+      e.preventDefault()
+      console.log(loginFormData)
+  }
+
+  function handleChange(e) {
+      const { name, value } = e.target
+      setLoginFormData(prev => ({
+          ...prev,
+          [name]: value
+      }))
+  }
   return (
     <StyledDiv>
          <h1>Sign in to your account</h1>

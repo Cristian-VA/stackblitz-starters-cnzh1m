@@ -12,15 +12,15 @@ height: 13vh
 `
 
 
-const active ="underline text-gray-900 text-sm  font-bold pr-4"
-const notActive ="hover:underline no-underline text-gray-900 text-sm  font-semibold pr-4"
+const active ="underline text-gray-900 text-sm  font-bold pr-4 my-auto"
+const notActive ="hover:underline no-underline text-gray-900 text-sm  font-semibold pr-4 my-auto"
 
 export default function Navbar() {
   return (
       <StyledNav>
-        <Link className="font-bold text-lg" to="/">#VANLIFE</Link>
+        <Link className="font-bold text-lg my-auto" to="/">#VANLIFE</Link>
        
-        <div >
+        <div className="flex" >
            <NavLink 
            className= {({isActive}) => isActive ? active : notActive }
            to="/host">Host</NavLink>
@@ -30,6 +30,10 @@ export default function Navbar() {
         
           <NavLink  className= {({isActive}) => isActive ? active : notActive }  
           to="/about">About</NavLink>
+
+          <NavLink  className= {({isActive}) => isActive ? active : notActive }  
+          to="/login"><img className="w-6" src="https://stackblitz.com/files/stackblitz-starters-cnzh1m/github/Cristian-VA/stackblitz-starters-cnzh1m/main/src/images/Icon.png"/></NavLink>
+
         </div>  
       </StyledNav>
     

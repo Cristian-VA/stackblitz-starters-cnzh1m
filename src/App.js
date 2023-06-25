@@ -23,6 +23,7 @@ import VanHostPricing from "./Pages/Host/VanHostPricing"
 import VanHostDetails from "./Pages/Host/VanHostDetails"
 import VanHostPhotos  from "./Pages/Host/VanHostPhotos"
 import  NotFound from "./Pages/Notfound"
+import  Login from "./Pages/Login"
 
 import "./server"
 
@@ -38,6 +39,7 @@ const router = createBrowserRouter(createRoutesFromElements(
             <Route index element={<Home/>}/>
            
             <Route path= "/about" element={<About/>}/>
+            <Route path= "/login" element={<Login/>}/>
             <Route path= "/vans" 
             element={<Vans/>} 
             loader={vansLoader}
