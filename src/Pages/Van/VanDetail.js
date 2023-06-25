@@ -34,14 +34,11 @@ const vansArray= [
 export default function VanDetail() {
  let params = useParams()
   const [van, setVan] = React.useState(null)
-
-
   const location = useLocation()
-  console.log(location)
 
-  const pathUrl = location.state.search ? path : "."
-  const path = `${location.pathname}?${location.state.search}`
-  console.log(path)
+
+
+
   React.useEffect(() => {
     if (params.id === ":1"){
       setVan(vansArray[0])
@@ -65,13 +62,14 @@ export default function VanDetail() {
 //}, [params.id])
 
 
-console.log(van)
 
 
+const search = location.state?.search ? `?${location.state.search}`: ""
 
+console.log(search)
   return (
     <div className="flex flex-col" >
-        <Link className="text-sm p-4 underline" to={pathUrl}>Back to all vans</Link>
+        <Link className="text-sm p-4 underline" to={`..${search}`} relative="path">Back to all vans</Link>
       {van? (
       <div className="p-4">
         <img src={van.imageUrl} alt=""/>
