@@ -4,6 +4,7 @@ import { Link, useSearchParams, useLoaderData } from "react-router-dom"
 
 
 export function loader(){
+ 
   return getVans()
 }
 
@@ -34,14 +35,9 @@ async function getVans() {
 
 
 export default function Vans() {
-
-  const [vans, setVans] = React.useState([])
   const [searchParams, setSearchParams] = useSearchParams()
-  const [loading, setLoading] = React.useState(false)
-  
-  const data = useLoaderData()
-  console.log(data)
-
+  const vans = useLoaderData()
+ 
 
  const typeFilter = searchParams.get("type")
 
@@ -50,22 +46,12 @@ export default function Vans() {
  : vans
 
 
- //conditional rendeing con state
- React.useEffect(() => {
-  async function loadVans() {
-      setLoading(true)
-      const data = await getVans()
-      setVans(data)
-      setLoading(false)
-  }
-  
-  loadVans()
-}, [])
-  
+
 
 
   const vanElements = displayedVans.map((van,index) =>{
     return (
+      
       <div key={index} className="flex flex-col ">
         <Link  to={`:${van.id}`} state={{ search: searchParams.toString() }}>
        <img className="rounded" src={van.imageUrl} alt=""/>
@@ -92,11 +78,9 @@ export default function Vans() {
     )
  })
 
-//conditional rendeing con state
 
- if (loading) {
-  return <h1 className="h-screen">Loading...</h1>
-}
+
+
   return (
     <div className="min-h-screen">
       <h1 className="text-center font-bold"> Explore our Van options</h1>

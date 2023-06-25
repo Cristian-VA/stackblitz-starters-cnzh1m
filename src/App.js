@@ -6,7 +6,9 @@ import Home from "./Pages/Home"
 import About from "./Pages/About"
 import Vans, {loader as vansLoader} from "./Pages/Van/Vans"
 import VanDetail from "./Pages/Van/VanDetail"
+
 import Layout from "./Components/Layout"
+import Error from "./Components/Error"
 
 import LayoutHost from "./Pages/Host/LayoutHost"
 import Dashboard from "./Pages/Host/DashBoard"
@@ -36,7 +38,10 @@ const router = createBrowserRouter(createRoutesFromElements(
             <Route index element={<Home/>}/>
            
             <Route path= "/about" element={<About/>}/>
-            <Route path= "/vans" element={<Vans/>} loader={vansLoader}/>
+            <Route path= "/vans" 
+            element={<Vans/>} 
+            loader={vansLoader}
+            errorElement={<Error/>}/>
             <Route path= "/vans/:id" element={<VanDetail/>}/>
 
 
