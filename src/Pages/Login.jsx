@@ -7,6 +7,8 @@ import styled from "styled-components"
 const StyledDiv = styled.div`
 height: 77.8vh;
 padding: 1em;
+display: flex;
+flex-direction: column;
 `
 
 
@@ -27,14 +29,15 @@ export default function Login() {
   }
   return (
     <StyledDiv>
-         <h1>Sign in to your account</h1>
-            <form onSubmit={handleSubmit} className="login-form">
+         <h1 className="text-center text-2xl font-bold mb-6">Sign in to your account</h1>
+            <form onSubmit={handleSubmit} className="flex flex-col">
                 <input
                     name="email"
                     onChange={handleChange}
                     type="email"
                     placeholder="Email address"
                     value={loginFormData.email}
+                    className="px-4 py-2 rounded"
                 />
                 <input
                     name="password"
@@ -42,8 +45,9 @@ export default function Login() {
                     type="password"
                     placeholder="Password"
                     value={loginFormData.password}
+                    className="px-4 py-2 rounded mb-6"
                 />
-                <button>Log in</button>
+                <button className="w-full bg-orange-400 text-orange-50 py-2 rounded">Log in</button>
             </form>
     </StyledDiv>
   )
