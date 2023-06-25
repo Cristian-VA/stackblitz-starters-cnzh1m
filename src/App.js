@@ -20,7 +20,7 @@ import VanHostLayout from "./Pages/Host/VanHostLayout"
 import VanHostPricing from "./Pages/Host/VanHostPricing"
 import VanHostDetails from "./Pages/Host/VanHostDetails"
 import VanHostPhotos  from "./Pages/Host/VanHostPhotos"
-
+import  NotFound from "./Pages/Notfound"
 
 import "./server"
 
@@ -39,6 +39,7 @@ export default function App() {
         <Route element={<Layout/>}>
 
             <Route index element={<Home/>}/>
+           
             <Route path= "/about" element={<About/>}/>
             <Route path= "/vans" element={<Vans/>}/>
             <Route path= "/vans/:id" element={<VanDetail/>}/>
@@ -56,8 +57,9 @@ export default function App() {
                             <Route path= "Photos" element={<VanHostPhotos/>}/>
                             <Route index element={<VanHostDetails/>}/>
                         </Route>
-                      
+                       
                 </Route>
+                <Route path="*" element={<NotFound/>}/>
         </Route>
 
     </Routes>
