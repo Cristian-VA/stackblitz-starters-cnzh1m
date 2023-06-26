@@ -15,7 +15,7 @@ import Dashboard from "./Pages/Host/DashBoard"
 import Income from "./Pages/Host/Income"
 import Reviews from "./Pages/Host/Reviews"
 
-import VansHost from "./Pages/Host/VansHost"
+import VansHost,{loader as vansHostLoader} from "./Pages/Host/VansHost"
 
 
 import VanHostLayout from "./Pages/Host/VanHostLayout"
@@ -48,17 +48,72 @@ const router = createBrowserRouter(createRoutesFromElements(
 
 
           // nested routes con relative routes los que empiezan con / son absolute paths 
+        
+          //protected routes using loaders
                 <Route path="host" element={<LayoutHost/>}>
-                    <Route index element={<Dashboard/>}/>
-                    <Route path= "income" element={<Income/>}/>
-                      <Route path= "Reviews" element={<Reviews/>}/>
-                      <Route path= "Vans" element={<VansHost/>}/>  
 
-                        <Route path= "Vans/:id" element={<VanHostLayout/>}>
-                            <Route path= "Pricing" element={<VanHostPricing/>}/>
-                            <Route path= "Photos" element={<VanHostPhotos/>}/>
-                            <Route index element={<VanHostDetails/>}/>
-                        </Route>
+                    <Route 
+                    index 
+                    element={<Dashboard/>}
+                    loader={async () => {
+                      return null
+                    }}/>
+
+                    <Route 
+                    path= "income" 
+                    element={<Income/>}
+                    loader={async () => {
+                    return null
+                    }}
+                    />
+
+                    <Route 
+                    path= "Reviews" 
+                    element={<Reviews/>}
+                    loader={async () => {
+                    return null
+                    }}
+                    />
+                    
+                    <Route 
+                    path= "Vans" 
+                    element={<VansHost/>}
+                    loader={vansHostLoader}
+                    />  
+
+                    <Route 
+                    path= "Vans/:id" 
+                    element={<VanHostLayout/>}
+                    loader={async () => {
+                    return null
+                    }}
+                    >
+                            
+                    <Route 
+                    path= "Pricing" 
+                    element={<VanHostPricing/>}
+                    loader={async () => {
+                    return null
+                    }}
+                    />
+                            
+                    <Route 
+                    path= "Photos" 
+                    element={<VanHostPhotos/>}
+                    loader={async () => {
+                    return null
+                    }}
+                    />
+
+                    <Route 
+                    index 
+                    element={<VanHostDetails/>}
+                    loader={async () => {
+                    return null
+                    }}
+                    />
+                    
+                </Route>
                        
                 </Route>
                 <Route path="*" element={<NotFound/>}/>

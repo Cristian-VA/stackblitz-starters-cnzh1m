@@ -1,22 +1,25 @@
 import React from "react";
 
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, useLoaderData } from "react-router-dom"
 import styled from "styled-components" 
+
+export function loader(){
+  return getVans()
+}
+
+async function getVans() {
+  const res = await fetch("/api/host/vans")
+  const data = await res.json()
+  return data.vans
+}
 
 const StyledDiv = styled.div`
 padding: 1.5em 1em;
 `
 
 export default function VansHost (){
-
-  const [vans, setVans] = React.useState([])
+  const vans = useLoaderData()
  
- 
-  React.useEffect(() => {
-     fetch("/api/host/vans")
-         .then(res => res.json())
-         .then(data => setVans(data.vans))
-}, [])
 
   console.log(vans)
 
