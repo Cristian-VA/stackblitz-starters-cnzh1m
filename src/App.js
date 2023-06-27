@@ -24,6 +24,7 @@ import VanHostDetails from "./Pages/Host/VanHostDetails"
 import VanHostPhotos  from "./Pages/Host/VanHostPhotos"
 import  NotFound from "./Pages/Notfound"
 import  Login from "./Pages/Login"
+import Authrequired from "./Pages/AuthRequired"
 
 import "./server"
 
@@ -49,7 +50,7 @@ const router = createBrowserRouter(createRoutesFromElements(
 
           // nested routes con relative routes los que empiezan con / son absolute paths 
         
-          //protected routes using loaders
+            <Route element={<Authrequired/>}>
                 <Route path="host" element={<LayoutHost/>}>
 
                     <Route 
@@ -112,8 +113,8 @@ const router = createBrowserRouter(createRoutesFromElements(
                     return null
                     }}
                     />
-                    
                 </Route>
+                </Route> 
                        
                 </Route>
                 <Route path="*" element={<NotFound/>}/>
