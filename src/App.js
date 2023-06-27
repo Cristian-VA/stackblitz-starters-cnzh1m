@@ -49,7 +49,7 @@ const router = createBrowserRouter(createRoutesFromElements(
 
 
           // nested routes con relative routes los que empiezan con / son absolute paths 
-        
+         //Protected routes wrap protected routes in a layout with logic
             <Route element={<Authrequired/>}>
                 <Route path="host" element={<LayoutHost/>}>
 

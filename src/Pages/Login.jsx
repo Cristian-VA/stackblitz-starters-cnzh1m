@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import styled from "styled-components" 
 
 
@@ -11,10 +11,13 @@ display: flex;
 flex-direction: column;
 `
 
-
 export default function Login() {
   const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
+  const location = useLocation()
 
+
+  const renderMsg = location.state ? location.state.message : ""
+console.log(renderMsg)
   function handleSubmit(e) {
       e.preventDefault()
       console.log(loginFormData)
@@ -29,6 +32,7 @@ export default function Login() {
   }
   return (
     <StyledDiv>
+         <h1 className="text-center my-6 font-semibold">{renderMsg}</h1>
          <h1 className="text-center text-2xl font-bold mb-6">Sign in to your account</h1>
             <form onSubmit={handleSubmit} className="flex flex-col">
                 <input
@@ -48,6 +52,7 @@ export default function Login() {
                     className="px-4 py-2 rounded mb-6"
                 />
                 <button className="w-full bg-orange-400 text-orange-50 py-2 rounded">Log in</button>
+               
             </form>
     </StyledDiv>
   )
