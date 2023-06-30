@@ -6,7 +6,7 @@ import styled from "styled-components"
 
 const StyledDiv = styled.div`
 padding: 1em;
-background: rgba(255, 234, 208, 1);
+
 
 `
 
