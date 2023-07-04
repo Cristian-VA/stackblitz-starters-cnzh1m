@@ -32,7 +32,7 @@ const StyledDiv = styled.div`
 display:flex; 
 flex-direction:column;
 `
-const hello ="hello"
+
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route element={<Layout/>}>
